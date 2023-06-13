@@ -14,6 +14,9 @@ import { verifyToken } from './middleware/auth.js';
 import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import postRoutes from './routes/posts.js';
+import User from './models/User.js';
+import Post from './models/Post.js';
+import { users, posts } from './data/index.js';
 
 // Configurations, 설정
 const __filename = fileURLToPath(import.meta.url); // 현재 파일의 경로를 가져옴
@@ -58,5 +61,9 @@ mongoose
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
+
+    // Add Data One Time (데이터베이스에 더미 데이터추가, 테스트용)
+    // User.insertMany(users);
+    // Post.insertMany(posts);
   })
   .catch((error) => console.log(`${error} did not connect`));
