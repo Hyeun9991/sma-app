@@ -9,6 +9,8 @@ import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { register } from './controllers/auth.js';
+import authRoutes from './routes/auth.js';
+import { verifyToken } from './middleware/auth.js';
 
 // Configurations, 설정
 const __filename = fileURLToPath(import.meta.url); // 현재 파일의 경로를 가져옴
@@ -36,7 +38,10 @@ const storage = multer.diskStorage({
 const upload = multer({ storage }); // 파일 업로드를 위한 multer 설정
 
 // Routes with Files
-app.post('/auth/register', upload.single('picture', register)); // 'picture' 필드의 파일을 업로드
+app.post('/auth/register', upload.single('picture'), register); // 'picture' 필드의 파일을 업로드
+
+// Routes
+app.use('/auth', authRoutes);
 
 // Mongoose Setup
 const PORT = process.env.PORT || 8123;
