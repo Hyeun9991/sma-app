@@ -11,6 +11,12 @@ Fullstack을 공부하기 위해서 만든 프로젝트
 
 ### Frontend
 
+- JavaScript
+- React
+- Redux Toolkit, Redux Persist
+- React Dropzone
+- Emotion, Material UI, Icon
+
 <br>
 
 ### Backend
