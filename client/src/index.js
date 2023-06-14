@@ -28,7 +28,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {
-        ignoredPaths: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER], // 휘발성 액션을 무시할 경로를 지정
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER], // 휘발성 액션을 무시할 경로를 지정
       },
     }), // 직렬화 가능성 검사를 위한 미들웨어를 설정
 });
