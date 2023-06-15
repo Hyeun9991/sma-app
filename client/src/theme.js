@@ -69,36 +69,57 @@ export const themeSettings = (mode) => {
               light: colorTokens.grey[50],
             },
             background: {
-              default: colorTokens.grey[10],
-              alt: colorTokens.grey[0],
+              default: colorTokens.grey[0],
+              alt: colorTokens.grey[10],
             },
           }),
     },
     typography: {
-      fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+      fontFamily: [
+        '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+        'sans-serif',
+      ].join(','),
       fontSize: 12,
       h1: {
-        fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+        fontFamily: [
+          '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+          'sans-serif',
+        ].join(','),
         fontSize: 40,
       },
       h2: {
-        fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+        fontFamily: [
+          '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+          'sans-serif',
+        ].join(','),
         fontSize: 32,
       },
       h3: {
-        fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+        fontFamily: [
+          '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+          'sans-serif',
+        ].join(','),
         fontSize: 24,
       },
       h4: {
-        fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+        fontFamily: [
+          '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+          'sans-serif',
+        ].join(','),
         fontSize: 20,
       },
       h5: {
-        fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+        fontFamily: [
+          '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+          'sans-serif',
+        ].join(','),
         fontSize: 16,
       },
       h6: {
-        fontFamily: ['Noto Sans KR', 'sans-serif'].join(','),
+        fontFamily: [
+          '-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial',
+          'sans-serif',
+        ].join(','),
         fontSize: 14,
       },
     },

@@ -34,26 +34,25 @@ const Navbar = () => {
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
+  const primaryLight = theme.palette.primary.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
-  const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
   // const fullName = `${user.firstName} ${user.lastName}`;
   const fullName = 'fake name';
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <FlexBetween padding="1rem 6%" backgroundColor={background}>
       <FlexBetween gap="1.75rem">
         <Typography
           fontFamily="Satisfy, cursive"
           fontWeight="bold"
-          fontSize="clamp(1rem, 2rem, 2.25rem)"
-          color="primary"
+          fontSize="clamp(1rem, 2rem, 2.25rem)" // 최소, 최대, 기본값
+          color="neutral"
           onClick={() => navigate('/home')}
           sx={{
             '&:hover': {
-              color: primaryLight,
               cursor: 'pointer',
             },
           }}
@@ -62,15 +61,20 @@ const Navbar = () => {
         </Typography>
         {isNonMobileScreens && (
           <FlexBetween
-            background={neutralLight}
-            borderRadius="9px"
-            gap="3rem"
-            padding="0.1rem 1.5rem"
+            backgroundColor={alt}
+            borderRadius="8px"
+            gap=".5rem"
+            padding="0.25rem .75rem"
           >
-            <InputBase placeholder="Search..." />
-            <IconButton>
+            <IconButton
+              sx={{
+                padding: 0,
+                '&:hover': { backgroundColor: 'transparent' },
+              }}
+            >
               <Search />
             </IconButton>
+            <InputBase placeholder="검색" sx={{ width: '200px' }} />
           </FlexBetween>
         )}
       </FlexBetween>
@@ -131,7 +135,7 @@ const Navbar = () => {
           zIndex="10"
           maxWidth="500px"
           minWidth="300px"
-          backgroundColor={background}
+          backgroundColor={alt}
         >
           {/* Close Icon */}
           <Box display="flex" justifyContent="flex-end" p="1rem">
