@@ -9,7 +9,7 @@ export const verifyToken = async (req, res, next) => {
     }
 
     // 토큰 값이 "Bearer "로 시작하는 경우 "Bearer " 부분을 제거하고 좌측 공백을 제거하여 토큰 값만 남김
-    if (token.startWith('Bearer ')) {
+    if (token.startsWith('Bearer ')) {
       token = token.slice(7, token.length).trimLeft();
     }
 
