@@ -39,9 +39,16 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // 가져온 게시글을 내림차순으로 정렬 (최신순으로)
+  const sortedPosts = [...posts].sort((a, b) => {
+    return new Date(b.createdAt) - new Date(a.createdAt);
+  });
+
+  console.log(sortedPosts);
+
   return (
     <>
-      {posts.map(
+      {sortedPosts.map(
         ({
           _id,
           userId,
