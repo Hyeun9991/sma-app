@@ -1,4 +1,4 @@
-import User from '../models/User.js';
+import User from "../models/User.js";
 
 // Read
 
@@ -26,8 +26,8 @@ export const getUserFriends = async (req, res) => {
 
     // 친구들의 정보를 원하는 형식으로 변환하여 새로운 배열로 생성
     const formattedFriends = friends.map(
-      ({ _id, friends, lastName, occupation, location, picturePath }) => {
-        return { _id, friends, lastName, occupation, location, picturePath };
+      ({ _id, firstName, lastName, occupation, location, picturePath }) => {
+        return { _id, firstName, lastName, occupation, location, picturePath };
       }
     );
     res.status(200).json(formattedFriends);
@@ -44,7 +44,8 @@ export const addRemoveFriend = async (req, res) => {
     const friend = await User.findById(friendId);
 
     // user.friends 배열에 friendId가 포함되어 있는지 확인
-    if (user.friends.includes(findById)) {
+    // if (user.friends.includes(findById)) {
+    if (user.friends.includes(friendId)) {
       user.friends = user.friends.filter((id) => id !== friendId); // user.friends 배열에서 friendId를 제거
       friend.friends = friend.friends.filter((id) => id !== id); // friend.friends 배열에서 id를 제거
     } else {
@@ -61,8 +62,8 @@ export const addRemoveFriend = async (req, res) => {
 
     // 친구들의 정보를 원하는 형식으로 변환하여 새로운 배열로 생성
     const formattedFriends = friends.map(
-      ({ _id, friends, lastName, occupation, location, picturePath }) => {
-        return { _id, friends, lastName, occupation, location, picturePath };
+      ({ _id, firstName, lastName, occupation, location, picturePath }) => {
+        return { _id, firstName, lastName, occupation, location, picturePath };
       }
     );
 
