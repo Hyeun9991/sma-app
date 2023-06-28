@@ -63,7 +63,7 @@ const Form = () => {
   const isRegister = pageType === 'register';
 
   const register = async (values, onSubmitProps) => {
-    // this allows us to send form info with image
+    // FormData 객체를 사용하여 데이터를 구성
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
@@ -112,14 +112,14 @@ const Form = () => {
       validationSchema={isLogin ? loginSchema : registerSchema}
     >
       {({
-        values,
-        errors,
-        touched,
-        handleBlur,
-        handleChange,
-        handleSubmit,
-        setFieldValue,
-        resetForm,
+        values, // 현재 폼 필드의 값들을 나타내는 객체
+        errors, // 각 폼 필드에 대한 유효성 검사 오류를 포함하는 객체
+        touched, // 각 폼 필드에 대한 터치 여부를 나타내는 객체
+        handleBlur, // 폼 필드의 onBlur 이벤트 핸들러로, 필드가 포커스를 잃었을 때 호출
+        handleChange, // 폼 필드의 onChange 이벤트 핸들러로, 필드 값이 변경될 때 호출
+        handleSubmit, // 폼이 제출될 때 호출되는 함수
+        setFieldValue, // 폼 필드의 값을 설정하는 함수로, 사용자 정의 로직에서 필드 값을 변경할 때 사용
+        resetForm, // 폼의 모든 필드를 초기값으로 재설정하는 함수
       }) => (
         <form onSubmit={handleSubmit}>
           <Box
