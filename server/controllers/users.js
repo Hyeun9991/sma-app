@@ -44,7 +44,6 @@ export const addRemoveFriend = async (req, res) => {
     const friend = await User.findById(friendId);
 
     // user.friends 배열에 friendId가 포함되어 있는지 확인
-    // if (user.friends.includes(findById)) {
     if (user.friends.includes(friendId)) {
       user.friends = user.friends.filter((id) => id !== friendId); // user.friends 배열에서 friendId를 제거
       friend.friends = friend.friends.filter((id) => id !== id); // friend.friends 배열에서 id를 제거
